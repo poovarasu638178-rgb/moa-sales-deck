@@ -26,7 +26,7 @@ npm run dev
 - Apple and Tesla inspired minimal luxury UI
 
 ## Live Demo
-Deployed on Vercel
+[https://quick-hertz.vercel.app](https://quick-hertz.vercel.app)
 
 ## Lighthouse Audit Scores (Production)
 - **Performance**: 74
