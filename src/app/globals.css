@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 10, 10, 10;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  overflow-x: hidden;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* Premium Scroll Snapping */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Typography Editorial Serif */
+h1, h2, h3, .font-editorial {
+  font-family: var(--font-playfair), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+/* Luxury selection background */
+::selection {
+  background: rgba(201, 168, 76, 0.25);
+  color: #ffffff;
+}
+
+/* Custom styles for luxury glassmorphism */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-gold {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* Golden text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #FFF6D6 0%, #C9A84C 50%, #856920 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Micro-animations */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Premium Moving Luxury Background */
+@keyframes luxury-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.luxury-animated-bg {
+  background: radial-gradient(circle at 30% 30%, #0d0d0d 0%, #060606 40%, #000000 100%);
+  background-size: 200% 200%;
+  animation: luxury-bg 25s ease infinite;
+}
+
+/* ─── PAGE LOAD FADE FROM BLACK ─────────────────────────────────────────────── */
+@keyframes page-reveal {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.page-reveal {
+  animation: page-reveal 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ─── HERO GOLDEN SHIMMER HEADLINE ──────────────────────────────────────────── */
+@keyframes gold-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.hero-shimmer-text {
+  background: linear-gradient(
+    120deg,
+    #FFF6D6 0%,
+    #C9A84C 20%,
+    #FFF6D6 35%,
+    #856920 50%,
+    #FFF6D6 65%,
+    #C9A84C 80%,
+    #FFF6D6 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 4s linear infinite;
+}
+
+/* ─── ACTIVE NAV DOT GOLD PULSE ─────────────────────────────────────────────── */
+@keyframes gold-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(201,168,76,0.7); transform: scale(1); }
+  50%  { box-shadow: 0 0 0 6px rgba(201,168,76,0); transform: scale(1.15); }
+  100% { box-shadow: 0 0 0 0 rgba(201,168,76,0);   transform: scale(1); }
+}
+
+.nav-dot-active {
+  animation: gold-pulse 2s ease-in-out infinite;
+}
+
+/* ─── CARD HOVER PREMIUM LIFT ────────────────────────────────────────────────── */
+.premium-card {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.premium-card:hover {
+  transform: scale(1.02) translateY(-2px);
+  border-color: rgba(201, 168, 76, 0.45) !important;
+  box-shadow: 0 8px 32px rgba(201, 168, 76, 0.15), 0 0 0 1px rgba(201,168,76,0.1) !important;
+}
+
+/* Elegant Shimmer Button Shine */
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: none;
+}
+
+.shimmer-button:hover::after {
+  left: 150%;
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom premium hover rules */
+.glass-panel {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(201, 168, 76, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(201, 168, 76, 0.05) !important;
+  background: rgba(22, 22, 22, 0.8) !important;
+}
+
+.glass-panel-gold {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-gold:hover {
+  border-color: rgba(201, 168, 76, 0.6) !important;
+  box-shadow: 0 15px 40px rgba(201, 168, 76, 0.2) !important;
+  background: rgba(14, 14, 14, 0.95) !important;
+}
+
