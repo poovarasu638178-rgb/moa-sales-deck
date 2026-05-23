@@ -45,26 +45,26 @@ export default function WhyMoa() {
   return (
     <section
       id="section-1"
-      className="snap-section w-full h-screen relative bg-dark-bg flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] relative bg-dark-bg flex items-center justify-center pt-[80px] md:pt-32 pb-20 px-4 md:px-6 overflow-hidden"
     >
       {/* Background radial highlight */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="container mx-auto max-w-6xl relative z-10 pr-16 md:pr-20 lg:pr-28">
+      <div className="container mx-auto max-w-6xl relative z-10 md:pr-20 lg:pr-28">
         <div className="text-center md:text-left mb-10 md:mb-14">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center justify-center md:justify-start mb-3"
+            className="flex items-center justify-center md:justify-start mb-3 text-center md:text-left"
           >
-            <span className="text-xs uppercase tracking-widest text-gold font-semibold">
-              The Moa Magnitude
+            <span className="text-sm uppercase tracking-widest text-gold font-semibold text-center">
+              THE MOA MAGNITUDE
             </span>
           </motion.div>
           
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+          <div className="flex flex-col items-center md:flex-row md:items-end md:justify-between gap-4 text-center md:text-left">
             <motion.h2
               initial="hidden"
               whileInView="visible"
@@ -75,7 +75,7 @@ export default function WhyMoa() {
                   transition: { staggerChildren: 0.1 }
                 }
               }}
-              className="text-4xl md:text-6xl font-semibold uppercase tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-semibold uppercase tracking-tight"
             >
               <motion.span
                 variants={{
@@ -84,7 +84,7 @@ export default function WhyMoa() {
                 }}
                 className="inline-block mr-2"
               >
-                Why Mall of
+                Why Mall Of
               </motion.span>{" "}
               <motion.span
                 variants={{
@@ -102,7 +102,7 @@ export default function WhyMoa() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-              className="flex flex-col items-center md:items-end text-center md:text-right text-gold"
+              className="flex flex-col items-center md:items-end text-center md:text-right text-gold mt-4 md:mt-0"
             >
               <div className="flex items-center gap-1 text-sm md:text-base font-semibold">
                 <MapPin className="w-4 h-4 shrink-0" />
@@ -114,7 +114,7 @@ export default function WhyMoa() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.id}

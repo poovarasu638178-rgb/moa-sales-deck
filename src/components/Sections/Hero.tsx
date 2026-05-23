@@ -11,7 +11,7 @@ export default function Hero({ onNextSection }: HeroProps) {
   return (
     <section
       id="section-0"
-      className="snap-section w-full h-screen relative flex items-center justify-center bg-black overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] pt-[80px] md:pt-0 relative flex items-center justify-center bg-black overflow-hidden"
     >
       {/* Ken Burns Background Image — slow zoom scale(1.0) to scale(1.08) over 20 seconds */}
       <div className="absolute inset-0 w-full h-full overflow-hidden select-none pointer-events-none z-0 bg-black">
@@ -32,14 +32,14 @@ export default function Hero({ onNextSection }: HeroProps) {
         />
       </div>
 
-      {/* Cinematic dark overlay (rgba 0,0,0,0.55) */}
-      <div className="absolute inset-0 bg-black/55 z-10 pointer-events-none" />
+      {/* Cinematic dark overlay */}
+      <div className="absolute inset-0 bg-black/65 md:bg-black/55 z-10 pointer-events-none" />
 
       {/* Subtle cinematic vignette overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/80 z-10 pointer-events-none" />
 
       {/* Hero Content */}
-      <div className="relative z-20 container mx-auto px-6 lg:px-20 text-center flex flex-col items-center justify-center h-full">
+      <div className="relative z-20 container mx-auto px-4 lg:px-20 text-center flex flex-col items-center justify-center h-full">
         {/* Subtle Luxury Badge */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -50,13 +50,13 @@ export default function Hero({ onNextSection }: HeroProps) {
           <span className="text-xs md:text-sm uppercase tracking-wider text-white font-bold mb-1">
             MALL OF AMERICA
           </span>
-          <span className="text-[9px] md:text-[10px] uppercase tracking-widest text-gold font-semibold">
+          <span className="text-sm md:text-[10px] uppercase tracking-widest text-gold font-semibold">
             GLOBAL LEASING PLATFORM
           </span>
         </motion.div>
 
         {/* Editorial Heading — Golden Shimmer */}
-        <h1 className="text-5xl md:text-7xl lg:text-9xl font-semibold tracking-tight text-white mb-6 uppercase leading-none flex flex-col items-center">
+        <h1 className="text-4xl md:text-6xl lg:text-9xl font-semibold tracking-tight text-white mb-6 uppercase leading-none flex flex-col items-center">
           <motion.span
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,11 +91,11 @@ export default function Hero({ onNextSection }: HeroProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: "easeOut", delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+          className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full md:w-auto px-4 md:px-0"
         >
           <button
             onClick={onNextSection}
-            className="shimmer-button group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gold via-gold-hover to-gold-light text-black font-semibold uppercase tracking-widest rounded-lg text-xs hover:brightness-105 transition-all shadow-[0_4px_25px_rgba(201,168,76,0.35)]"
+            className="w-full sm:w-auto min-h-[44px] justify-center shimmer-button group flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-gold via-gold-hover to-gold-light text-black font-semibold uppercase tracking-widest rounded-lg text-xs hover:brightness-105 transition-all shadow-[0_4px_25px_rgba(201,168,76,0.35)]"
           >
             Explore the Experience
             <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />

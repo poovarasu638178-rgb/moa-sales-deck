@@ -30,25 +30,25 @@ export default function Events({ onOpenContact }: EventsProps) {
   return (
     <section
       id="section-5"
-      className="snap-section w-full h-screen relative bg-dark-bg flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] relative bg-dark-bg flex items-center justify-center pt-[80px] md:pt-32 pb-20 px-4 md:px-6 overflow-hidden"
     >
       {/* Background graphic glow */}
       <div className="absolute right-1/4 top-1/4 w-[700px] h-[700px] bg-gold/5 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="container mx-auto max-w-6xl relative z-10 pr-16 md:pr-20 lg:pr-28">
+      <div className="container mx-auto max-w-6xl relative z-10 md:pr-20 lg:pr-28">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Column: Big Pitch Header & List */}
-          <div className="lg:col-span-6 flex flex-col justify-center">
+          <div className="lg:col-span-6 flex flex-col justify-center text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="flex items-center mb-3"
+              className="flex items-center justify-center md:justify-start mb-3"
             >
-              <span className="text-xs uppercase tracking-widest text-gold font-semibold">
+              <span className="text-sm uppercase tracking-widest text-gold font-semibold text-center">
                 Amplified Exposure
               </span>
             </motion.div>
@@ -118,7 +118,7 @@ export default function Events({ onOpenContact }: EventsProps) {
           </div>
 
           {/* Right Column: Immersive visual + Dynamic Callout */}
-          <div className="lg:col-span-6 flex flex-col justify-center h-full">
+          <div className="lg:col-span-6 flex flex-col justify-center h-full mt-8 lg:mt-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -134,7 +134,7 @@ export default function Events({ onOpenContact }: EventsProps) {
               />
               
               <div className="absolute bottom-6 left-6 z-20">
-                <span className="text-[10px] uppercase tracking-widest text-gold font-semibold bg-black/55 px-3 py-1 rounded-full border border-gold/20 backdrop-blur-sm">
+                <span className="text-sm uppercase tracking-widest text-gold font-semibold bg-black/55 px-3 py-1 rounded-full border border-gold/20 backdrop-blur-sm">
                   Huntington Bank Rotunda Venue
                 </span>
                 <h4 className="text-xl font-editorial font-medium text-white mt-2">40M Captive Audience Potential</h4>
@@ -151,7 +151,7 @@ export default function Events({ onOpenContact }: EventsProps) {
             >
               <GlassCard
                 goldBorder
-                className="p-6 flex items-center justify-between group"
+                className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group"
                 onClick={() => onOpenContact("events")}
               >
                 <div>

@@ -36,13 +36,13 @@ export default function Contact({ onOpenContact }: ContactProps) {
   return (
     <section
       id="section-6"
-      className="snap-section w-full h-screen relative bg-dark-bg flex flex-col justify-between pt-24 md:pt-28 pb-12 px-6 overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] relative bg-dark-bg flex flex-col justify-between pt-[80px] md:pt-28 pb-12 px-4 md:px-6 overflow-hidden"
     >
       {/* Background graphic glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold/5 rounded-full filter blur-[150px] pointer-events-none" />
 
       {/* Main Content */}
-      <div className="container mx-auto max-w-6xl relative z-10 flex-grow flex flex-col justify-center pr-16 md:pr-20 lg:pr-28">
+      <div className="container mx-auto max-w-6xl relative z-10 flex-grow flex flex-col justify-center md:pr-20 lg:pr-28">
         
         {/* Header */}
         <div className="text-center mb-10 md:mb-12">
@@ -53,7 +53,7 @@ export default function Contact({ onOpenContact }: ContactProps) {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="flex items-center justify-center mb-3"
           >
-            <span className="text-xs uppercase tracking-widest text-gold font-semibold">
+            <span className="text-sm uppercase tracking-widest text-gold font-semibold text-center">
               Strategic Collaboration
             </span>
           </motion.div>
@@ -109,6 +109,7 @@ export default function Contact({ onOpenContact }: ContactProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 * idx }}
+              className="mx-auto w-full max-w-sm md:max-w-none"
             >
               <GlassCard
                 goldBorder
@@ -138,15 +139,15 @@ export default function Contact({ onOpenContact }: ContactProps) {
       </div>
 
       {/* Luxury Brand Footer */}
-      <div className="container mx-auto max-w-6xl relative z-10 pt-8 border-t border-white/5 mt-8 pr-16 md:pr-20 lg:pr-28">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-white/40 items-center">
+      <div className="container mx-auto max-w-6xl relative z-10 pt-8 border-t border-white/5 mt-8 md:pr-20 lg:pr-28">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-white/40 items-center text-center md:text-left">
           
           {/* Logo / Brand Name */}
-          <div className="text-center md:text-left flex flex-col">
+          <div className="flex flex-col items-center md:items-start">
             <span className="font-editorial text-lg text-white font-bold tracking-wider">
               MALL OF AMERICA
             </span>
-            <div className="text-[10px] text-white/40 mt-1 flex flex-col gap-0.5">
+            <div className="text-[10px] text-white/40 mt-1 flex flex-col gap-0.5 items-center md:items-start">
               <span>Bloomington, Minnesota</span>
               <span>Global Leasing Platform</span>
             </div>

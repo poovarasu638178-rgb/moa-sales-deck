@@ -47,24 +47,24 @@ export default function Entertainment() {
   return (
     <section
       id="section-4"
-      className="snap-section w-full h-screen relative bg-dark-bg flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] relative bg-dark-bg flex items-center justify-center pt-[80px] md:pt-32 pb-20 px-4 md:px-6 overflow-hidden"
     >
       {/* Background visual graphics */}
       <div className="absolute top-1/2 left-10 w-[500px] h-[500px] bg-gold/5 rounded-full filter blur-[150px] pointer-events-none" />
 
-      <div className="container mx-auto max-w-6xl relative z-10 h-full flex flex-col justify-center pr-16 md:pr-20 lg:pr-28">
+      <div className="container mx-auto max-w-6xl relative z-10 h-full flex flex-col justify-center md:pr-20 lg:pr-28">
         
         {/* Header split */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 md:mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8 md:mb-12 text-center md:text-left">
           <div>
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="flex items-center mb-3"
+              className="flex items-center justify-center md:justify-start mb-3"
             >
-              <span className="text-xs uppercase tracking-widest text-gold font-semibold">
+              <span className="text-sm uppercase tracking-widest text-gold font-semibold text-center">
                 Major Differentiator
               </span>
             </motion.div>
@@ -103,13 +103,13 @@ export default function Entertainment() {
           </div>
 
           {/* Interactive Navigation Tabs */}
-          <div className="flex gap-2 bg-white/[0.02] border border-white/5 rounded-xl p-1 shrink-0 overflow-x-auto no-scrollbar">
+          <div className="flex gap-2 bg-white/[0.02] border border-white/5 rounded-xl p-1 shrink-0 overflow-x-auto no-scrollbar w-full md:w-auto">
             {attractions.map((attraction, idx) => (
               <button
                 key={attraction.title}
                 onClick={() => setActiveTab(idx)}
                 className={`
-                  px-4 py-2.5 rounded-lg text-xs uppercase tracking-widest font-semibold transition-all duration-300 whitespace-nowrap
+                  px-4 py-2.5 rounded-lg text-sm uppercase tracking-widest font-semibold transition-all duration-300 whitespace-nowrap shrink-0
                   ${activeTab === idx ? "bg-gold text-black shadow-md font-bold" : "text-white/50 hover:text-white"}
                 `}
               >
@@ -147,7 +147,7 @@ export default function Entertainment() {
                 />
                 
                 <div className="absolute bottom-6 left-6 z-20">
-                  <span className="text-xs uppercase tracking-widest text-gold font-semibold bg-black/40 px-3 py-1 rounded-full border border-gold/20 backdrop-blur-sm">
+                  <span className="text-sm uppercase tracking-widest text-gold font-semibold bg-black/40 px-3 py-1 rounded-full border border-gold/20 backdrop-blur-sm">
                     {attractions[activeTab].type}
                   </span>
                 </div>

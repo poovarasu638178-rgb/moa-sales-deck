@@ -26,24 +26,24 @@ export default function Dining() {
   return (
     <section
       id="section-3"
-      className="snap-section w-full h-screen relative bg-dark-bg flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] relative bg-dark-bg flex items-center justify-center pt-[80px] md:pt-32 pb-20 px-4 md:px-6 overflow-hidden"
     >
       {/* Background Radial Light */}
       <div className="absolute right-0 bottom-0 w-[600px] h-[600px] bg-gold/5 rounded-full filter blur-[120px] pointer-events-none" />
 
-      <div className="container mx-auto max-w-6xl relative z-10 pr-16 md:pr-20 lg:pr-28">
+      <div className="container mx-auto max-w-6xl relative z-10 md:pr-20 lg:pr-28">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           {/* Left Column: Premium Imagery Collage */}
-          <div className="lg:col-span-6 order-2 lg:order-1 relative h-[300px] md:h-[450px] w-full flex gap-4">
+          <div className="lg:col-span-6 order-2 lg:order-1 relative h-auto md:h-[450px] w-full flex flex-col md:flex-row gap-4 mt-8 lg:mt-0">
             {/* Primary Main Image Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="w-2/3 h-full rounded-2xl overflow-hidden border border-white/10 relative"
+              className="w-full md:w-2/3 h-[250px] md:h-full rounded-2xl overflow-hidden border border-white/10 relative shrink-0"
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
               <img
@@ -52,19 +52,19 @@ export default function Dining() {
                 className="w-full h-full object-cover filter brightness-[0.7]"
               />
               <div className="absolute bottom-6 left-6 z-20">
-                <span className="text-[10px] uppercase tracking-widest text-gold font-semibold">Fine Dining</span>
+                <span className="text-sm uppercase tracking-widest text-gold font-semibold">Fine Dining</span>
                 <h4 className="text-lg font-editorial font-medium text-white">Curated Culinary Experiences</h4>
               </div>
             </motion.div>
 
             {/* Secondary Layered Image Card */}
-            <div className="w-1/3 flex flex-col gap-4 h-full">
+            <div className="w-full md:w-1/3 flex flex-row md:flex-col gap-4 h-[140px] md:h-full shrink-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.15 }}
-                className="h-1/2 rounded-2xl overflow-hidden border border-white/10 relative"
+                className="w-1/2 md:w-full h-full md:h-1/2 rounded-2xl overflow-hidden border border-white/10 relative"
               >
                 <div className="absolute inset-0 bg-black/40 z-10" />
                 <img
@@ -79,7 +79,7 @@ export default function Dining() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                className="h-1/2 bg-gold/5 border border-gold/20 rounded-2xl p-6 flex flex-col justify-between"
+                className="w-1/2 md:w-full h-full md:h-1/2 bg-gold/5 border border-gold/20 rounded-2xl p-4 md:p-6 flex flex-col justify-between"
               >
                 <div className="w-8 h-8 rounded-full bg-gold/10 flex items-center justify-center text-gold">
                   <Sparkles className="w-4 h-4" />
@@ -93,15 +93,15 @@ export default function Dining() {
           </div>
 
           {/* Right Column: Narrative & Stats */}
-          <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-center">
+          <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-center text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="flex items-center mb-3"
+              className="flex items-center justify-center md:justify-start mb-3"
             >
-              <span className="text-xs uppercase tracking-widest text-gold font-semibold">
+              <span className="text-sm uppercase tracking-widest text-gold font-semibold text-center">
                 Lifestyle & Gastronomy
               </span>
             </motion.div>

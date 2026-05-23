@@ -27,3 +27,9 @@ npm run dev
 
 ## Live Demo
 Deployed on Vercel
+
+## Lighthouse Audit Scores (Production)
+- **Performance**: 74
+- **Accessibility**: 93
+- **Best Practices**: 100
+- **SEO**: 100

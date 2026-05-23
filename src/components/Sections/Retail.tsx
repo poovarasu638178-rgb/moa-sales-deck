@@ -45,20 +45,20 @@ export default function Retail({ onOpenContact }: RetailProps) {
   return (
     <section
       id="section-2"
-      className="snap-section w-full h-screen relative bg-dark-bg flex items-center justify-center pt-28 md:pt-32 pb-20 px-6 overflow-hidden"
+      className="snap-section w-full min-h-[100dvh] relative bg-dark-bg flex items-center justify-center pt-[80px] md:pt-32 pb-20 px-4 md:px-6 overflow-hidden"
     >
-      <div className="container mx-auto max-w-6xl relative z-10 h-full flex flex-col justify-center pr-16 md:pr-20 lg:pr-28">
+      <div className="container mx-auto max-w-6xl relative z-10 h-full flex flex-col justify-center md:pr-20 lg:pr-28">
         
         {/* Section Header */}
-        <div className="mb-8 md:mb-12">
+        <div className="text-center md:text-left mb-8 md:mb-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="flex items-center mb-3"
+            className="flex items-center justify-center md:justify-start mb-3"
           >
-            <span className="text-xs uppercase tracking-widest text-gold font-semibold">
+            <span className="text-sm uppercase tracking-widest text-gold font-semibold text-center">
               Premier Positioning
             </span>
           </motion.div>
@@ -184,7 +184,7 @@ export default function Retail({ onOpenContact }: RetailProps) {
               Select Established Tenants
             </h3>
             
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {tenants.map((tenant, idx) => (
                 <motion.div
                   key={tenant}
